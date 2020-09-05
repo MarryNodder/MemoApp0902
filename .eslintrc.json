@@ -6,4 +6,8 @@
         "import"
     ],
     "parser": "babel-eslint"
+
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    }
 }
