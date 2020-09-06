@@ -12,17 +12,12 @@ class BodyText extends React.Component {
         );
     }
 }
-
 const styles = StyleSheet.create({
     
     text: {
         color: 'pink',
         backgroundColor: '#eee',
     },   
-
 });
-
-
-
 export default BodyText;
 
