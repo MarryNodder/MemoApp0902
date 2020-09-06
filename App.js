@@ -75,10 +75,19 @@ const styles = StyleSheet.create({
     height: 48,
     backgroundColor: 'royalblue',
     borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2},
+    shadowOpacity: 0.5,
+    shadowRadius:3,
+
   },
 
   memoAddButttonTitle:{
-    fontSize: 30,
+    fontSize: 32,
+    lineHeight: 32,
+    color: '#fff',
   },
 
   memoList:{
@@ -115,7 +124,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 0},
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.5,
     shadowRadius:3,
 
   },
