@@ -22,7 +22,7 @@ appbar: {
     right: 0,
     height: 80,
     paddingTop: 30,
-    backgroundColor: 'pink',
+    backgroundColor: 'salmon',
     justifyContent: 'center',
     alignItems: 'center',
     shadowColor: '#000',

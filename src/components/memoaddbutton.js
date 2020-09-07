@@ -3,9 +3,12 @@ import { StyleSheet, Text, View} from 'react-native';
 
 class MemoAddButton extends React.Component {
     render() {
+        const {style} = this.props;
         return(
-                    <View style={styles.memoAddButtton}>
-                    <Text style={styles.memoAddButttonTitle}>+</Text>
+                 <View style={[styles.memoAddButtton, style]}>
+                    <Text style={styles.memoAddButttonTitle}>
+                    {this.props.children}
+                    </Text>
                     </View>
         );
     }
@@ -18,7 +21,7 @@ const styles = StyleSheet.create({
     right: 32,
     width: 48,
     height: 48,
-    backgroundColor: 'royalblue',
+    backgroundColor: 'powderblue',
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
