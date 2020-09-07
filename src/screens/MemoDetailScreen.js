@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 
-import CircleButton from '../components/memoaddbutton';
 import MemoAddButton from '../components/memoaddbutton';
 
 class MemoDetailScreen extends React.Component {
@@ -23,7 +22,7 @@ class MemoDetailScreen extends React.Component {
                     </Text>
                 </View>
 
-                    <MemoAddButton style={styles.editButton}>+</MemoAddButton>
+                    <MemoAddButton color='white' style={styles.editButton}>+</MemoAddButton>
             </View>
         );
     }
