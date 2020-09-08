@@ -1,28 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, View} from 'react-native';
 import * as Font from 'expo-font';
 import fontAwsome from '../../assets/fonts/fa-solid-900.ttf';
+import { createIconSet } from '@expo/vector-icons';
+
+const CustomIcon = createIconSet({
+    pencil: '\uf303',
+    plus:    '\uf067'
+}, 'FontAwsome');
 
 class MemoAddButton extends React.Component {
     state = {
         fontLoaded: false,
-
     }
-
     async componentDidMount() {
         await Font.loadAsync({
             FontAwsome: fontAwsome,
-
         });
 
         this.setState({fontLoaded: true});
-
       }
-
-
-
     render() {
-        const { style,color } = this.props;
+        const { name, style,color } = this.props;
 
         let bgColor = '#E31676';
         let textColor = '#fff';
@@ -36,11 +35,8 @@ class MemoAddButton extends React.Component {
                 <View style={[styles.memoAddButtton, style, {backgroundColor: bgColor}]}>
                     {
                         this.state.fontLoaded ? (
-                            <Text style={[styles.memoAddButttonTitle, {color: textColor}]}>
-                               {this.props.children}
-                            </Text>
+                            <CustomIcon name = {name}style={[styles.memoAddButttonTitle, {color: textColor}]} />
                         ) : null
-                        
                     }
                 </View>
         );
@@ -66,12 +62,11 @@ const styles = StyleSheet.create({
 
     memoAddButttonTitle:{
         fontFamily: 'FontAwsome',
-        fontSize: 32,
+        fontSize: 24,
         lineHeight: 32,
         color: '#fff',
       },
     
 })
-
 
 export default MemoAddButton;

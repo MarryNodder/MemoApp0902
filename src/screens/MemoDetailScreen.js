@@ -22,7 +22,8 @@ class MemoDetailScreen extends React.Component {
                     </Text>
                 </View>
 
-                    <MemoAddButton color='white' style={styles.editButton}>+</MemoAddButton>
+                    <MemoAddButton name = 'pencil' color='white' style={styles.editButton} />
+                
             </View>
         );
     }
