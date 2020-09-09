@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
-import MemoEditScreen from './src/screens/MemoEditScreen';
 import AppBar from './src/components/appbar';
+
+import SignUpScreen from './src/screens/SignUpScreen';
 
 export default class App extends React.Component {
   render() {
     return(
     <View style={styles.container}>
       <AppBar />
-      <MemoEditScreen /> 
+      <SignUpScreen /> 
     </View>
     );
     }

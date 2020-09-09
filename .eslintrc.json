@@ -5,9 +5,10 @@
         "jsx-ally",
         "import"
     ],
-    "parser": "babel-eslint"
+    "rules":{
+        "react/prefer-stateless-function": 0,
+        "react/jsx-filename-extension": 0
+    },
 
-    "editor.codeActionsOnSave": {
-        "source.fixAll": true
-    }
+    "parser": "babel-eslint"
 }
