@@ -21,8 +21,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
+    }//,
 
-    "editor.parameterHints": false
+    //"editor.parameterHints": false
   }
 }
