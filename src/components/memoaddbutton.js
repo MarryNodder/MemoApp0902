@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View} from 'react-native';
+import { StyleSheet, View, TouchableHighlight} from 'react-native';
 import * as Font from 'expo-font';
 import fontAwsome from '../../assets/fonts/fa-solid-900.ttf';
 import { createIconSet } from '@expo/vector-icons';
@@ -22,9 +22,9 @@ class MemoAddButton extends React.Component {
         this.setState({fontLoaded: true});
       }
     render() {
-        const { name, style,color } = this.props;
+        const { name, style,color, onPress} = this.props;
 
-        let bgColor = '#E31676';
+        let bgColor = '#20b2aa';
         let textColor = '#fff';
 
         if(color === 'white'){
@@ -32,33 +32,45 @@ class MemoAddButton extends React.Component {
             textColor = '#E31676';
         }
 
+        //                        <TouchableHighlight onPress={() => this.props.navigation.navigate('MemoDetail')}>
+
         return(
-                <View style={[styles.memoAddButtton, style, {backgroundColor: bgColor}]}>
-                    {
-                        this.state.fontLoaded ? (
-                            <CustomIcon name = {name}style={[styles.memoAddButttonTitle, {color: textColor}]} />
-                        ) : null
-                    }
-                </View>
+                <TouchableHighlight style={[styles.container, style]} onPress={onPress} underlayColor='transparent' >
+                    <View style={[styles.memoAddButtton, style, {backgroundColor: bgColor}]}>
+                        {
+                            this.state.fontLoaded ? (
+                                <CustomIcon name = {name}style={[styles.memoAddButttonTitle, {color: textColor}]} />
+                            ) : null
+                        }
+                    </View>
+                    </TouchableHighlight>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    container:{
+        
+            width: 48, // 追加
+            height: 48,　// 追加
+            position: 'absolute',
+            bottom: 24,
+            right: 24,
+        
+    },
+
     memoAddButtton:{
-    position: 'absolute',
-    bottom: 32,
-    right: 32,
-    width: 48,
-    height: 48,
-    backgroundColor: 'powderblue',
-    borderRadius: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2},
-    shadowOpacity: 0.5,
-    shadowRadius:3,
+        
+        width: 48,
+        height: 48,
+        backgroundColor: 'powderblue',
+        borderRadius: 24,
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2},
+        shadowOpacity: 0.5,
+        shadowRadius:3,
     },
 
     memoAddButttonTitle:{

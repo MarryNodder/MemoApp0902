@@ -21,8 +21,9 @@ class MemoDetailScreen extends React.Component {
                         this is niboshi ramen
                     </Text>
                 </View>
+                                                          
 
-                    <MemoAddButton name = 'pencil' color='white' style={styles.editButton} />
+                    <MemoAddButton name = 'pencil' color='white' style={styles.editButton} onPress={() => this.props.navigation.navigate('MemoEdit')}/>
                 
             </View>
         );
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     editButton:{
-        top:95,
+        top:48,
 
     }
 
