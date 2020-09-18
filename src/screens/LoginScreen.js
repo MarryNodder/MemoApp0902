@@ -11,7 +11,7 @@ class LoginScreen extends React.Component {
                 </Text>
                 <TextInput style={styles.input}  value ='Email address'/>
                 <TextInput style={styles.input}  value= 'Password' />
-                <TouchableHighlight style={styles.button} onPress={() => {}} >
+                <TouchableHighlight style={styles.button} onPress={() => this.props.navigation.navigate('MEMOT')} >
                     <Text style = {styles.buttonTitle}> SUBMIT </Text>
                 </TouchableHighlight>
             </View>

@@ -31,10 +31,19 @@ function App() {
           },
           headerTitleStyle:{
             color:'black',
-          }
-
+          },
       }}
       >
+
+        <Stack.Screen
+        name="SignUp" 
+        component={SignUp} />
+
+        <Stack.Screen
+        name="Login" 
+        component={Login} />
+
+
         <Stack.Screen
         name="MEMOT" 
         component={MemoList} />
@@ -47,13 +56,6 @@ function App() {
         name="MemoEdit" 
         component={MemoEdit} />
         
-        <Stack.Screen
-        name="Login" 
-        component={Login} />
-
-        <Stack.Screen
-        name="SignUp" 
-        component={SignUp} />
 
 
 

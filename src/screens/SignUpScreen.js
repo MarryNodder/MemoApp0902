@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, TextInput, Button, Text, TouchableHighlight} from 'react-native';
 
-
 class SignUpScreen extends React.Component {
     render() {
         return(
@@ -11,7 +10,7 @@ class SignUpScreen extends React.Component {
                 </Text>
                 <TextInput style={styles.input}  value ='Email address'/>
                 <TextInput style={styles.input}  value= 'Password' />
-                <TouchableHighlight style={styles.button} onPress={() => {}} underlayColor='#C70F66' >
+                <TouchableHighlight style={styles.button} onPress={() => this.props.navigation.navigate('MEMOT')} >
                     <Text style = {styles.buttonTitle}> SUBMIT </Text>
                 </TouchableHighlight>
             </View>

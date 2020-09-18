@@ -1,22 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput} from 'react-native';
-
+import { CommonActions } from '@react-navigation/native';
 import MemoAddButton from '../components/memoaddbutton';
 
-class MemoEditScreen extends React.Component {
-    render() {
+function MemoEditScreen ({ navigation }) {
         return(
             <View style= {styles.container}>
                 <TextInput style={styles.memoEditInput} multiline value='Hi' />
                     
-                
-                <MemoAddButton name= 'check' />
+                <MemoAddButton name= 'check' onPress={() => navigation.goBack()}/>
 
             </View>
             
         );
     }
-}
 
 const styles = StyleSheet.create({
     container: {
