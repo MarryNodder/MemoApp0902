@@ -1,7 +1,5 @@
-
-
-
 import * as React from 'react';
+import * as firebase from 'firebase';
 import { NavigationContainer } from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -12,7 +10,19 @@ import SignUp from './src/screens/SignUpScreen';
 import Login from './src/screens/LoginScreen';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
+import ENV from './env.json';
 
+const firebaseConfig = {
+  apiKey:           ENV.FIREBASE_API_KEY,
+  authDomain:       ENV.FIREBASE_AUTH_DOMAIN,
+  databaseURL:      ENV.FIREBASE_DB_URL,
+  projectId:        ENV.FIREBASE_PRJ_ID,
+  storageBucket:    ENV.FIREBASE_STORAGE,
+  messagingSenderId:ENV.FIREBASE_SENDER_ID,
+};
+
+
+if (firebase.apps === undefined) { firebase.initializeApp(config); }
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator
@@ -26,22 +36,23 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator
       screenOptions={{
+          headerTitleAlign:'center',
+          headerTintColor:'#fff',
+          headerTitle:'Memot',
           headerStyle:{
             backgroundColor: 'aquamarine',
-          },
-          headerTitleStyle:{
-            color:'black',
           },
       }}
       >
 
-        <Stack.Screen
-        name="SignUp" 
-        component={SignUp} />
 
         <Stack.Screen
         name="Login" 
         component={Login} />
+
+        <Stack.Screen
+        name="SignUp" 
+        component={SignUp} />
 
 
         <Stack.Screen
